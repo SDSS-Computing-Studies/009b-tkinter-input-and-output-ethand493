@@ -34,7 +34,7 @@ def wordEntry():
     e1.delete(0,END)
     
     count=count+1
-    if count==10:
+    if count==11:
         print(len(wordlist2))
         displayMadLib()
         count=0
