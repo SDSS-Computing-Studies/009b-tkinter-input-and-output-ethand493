@@ -13,9 +13,11 @@ from tkinter import *
 win = tk.Tk()
 win.geometry('600x400')
 listword = ["Adjective", "Noun", "Holiday", "Person", "Place", "Verb", "Food", "Plural Noun", "Body part (Plural)"]
+wordtype = StringVar()
 output = StringVar()
 label1 = tk.Label(win, text='Enter the next word.')
 e1 = tk.Entry(win, width=20)
+wtype=tk.Label(win,textvariable=wordtype)
 label2=tk.Label(win,textvariable=output)
 wordlist2=[]
 wordtype.set(listword[0])
@@ -32,7 +34,7 @@ def wordEntry():
     e1.delete(0,END)
     
     count=count+1
-    if count==19:
+    if count==10:
         print(len(wordlist2))
         displayMadLib()
         count=0
@@ -50,7 +52,7 @@ button1=tk.Button(win,text='Press to commit the word',command=wordEntry)
 
 label1.grid(row=2,column=1)
 e1.grid(row=2,column=2)
-wordtype.grid(row=1,column=2)
+wtype.grid(row=1,column=2)
 button1.grid(row=3,column=2)
 label2.grid(row=5,column=1,columnspan=2)
 win.mainloop()
